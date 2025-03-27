@@ -13,7 +13,7 @@
   <style scoped>
     #calendarWrapper {
       /* grid-area: calendar; */
-      background-color: lightpink;
+      background-color: white;
     }
   </style>
   

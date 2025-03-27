@@ -24,7 +24,8 @@
   <style scoped>
     #clockWrapper {
       /* grid-area: Clock; */
-      background-color: lightyellow;
+      background-color: white;
+      height: 100%;
     }
   </style>
   

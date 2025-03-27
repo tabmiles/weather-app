@@ -48,10 +48,12 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Delius&family=Gloria+Hallelujah&family=Indie+Flower&family=Mansalva&display=swap');
 #app {
   /* TODO: font */
   text-align: center;
   background-color: rgb(255, 229, 233);
+  padding: 10px 10px 0 10px;
 
   display: grid;
   /* Prevent wall decoration responsiveness */
@@ -69,7 +71,7 @@ export default {
   position: absolute;
   background: none;
   border: none;
-  padding: 10px;
+  padding: 5px;
   svg {
     fill: lightgray;
   }
@@ -79,5 +81,10 @@ export default {
   svg {
     fill: lightslategray;
   }
+}
+* {
+  font-family: "Delius", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 </style>
