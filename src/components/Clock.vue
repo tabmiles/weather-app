@@ -1,6 +1,6 @@
 <template>
     <div id="clockWrapper">
-      <button id="clockTime">{{ this.time }}</button>
+      <button @click="handleTimeChange" id="clockTime">{{ this.time }}</button>
     </div>
   </template>
   
@@ -16,6 +16,9 @@
       setTime(time) {
         console.log('[Clock] Time: ', time);
         this.time = time.toLocaleTimeString("en-US", {timeStyle: 'short'});
+      },
+      handleTimeChange(event) {
+        console.log('[Clock] Time change: ', event);
       }
     }
   }
@@ -34,8 +37,8 @@
       background-color: transparent;
       border: none;
       cursor: pointer;
-      font-size: x-large;
-      margin-top: 42px;
+      font-size: large;
+      margin-top: 47px;
       padding: 15px 10px;
     }
   </style>

@@ -50,7 +50,6 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Delius&family=Gloria+Hallelujah&family=Indie+Flower&family=Mansalva&display=swap');
 #app {
-  /* TODO: font */
   text-align: center;
   background-color: rgb(255, 229, 233);
   padding: 10px 10px 0 10px;

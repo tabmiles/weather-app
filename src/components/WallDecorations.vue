@@ -7,7 +7,7 @@
         <PictureFrame ref="Sunrise" type="sunrise"/>
         <PictureFrame ref="Sunset" type="sunset"/>
       </div>
-      <Calendar/>
+      <Calendar ref="Calendar" :date="date"/>
     </div>
   </template>
   
@@ -32,7 +32,8 @@ import Clock from './Clock.vue';
             temperature: '',
             sunrise: '',
             sunset: '',
-            time: ''
+            time: '',
+            date: ''
         }
     },
 
@@ -42,6 +43,7 @@ import Clock from './Clock.vue';
           console.log('[WallDecorations] Weather: ', weather);
           this.temperature = weather.data.current.temperature_2m;
           this.time = store.getCurrentTime();
+          this.date  = store.getCurrentDate();
           this.sunrise = store.getTime(weather.data.daily.sunrise[0]);
           this.sunset = store.getTime(weather.data.daily.sunset[0]);
           this.$refs.Sunrise.setTime(this.sunrise);

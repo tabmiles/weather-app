@@ -32,4 +32,8 @@ export const store = {
     getTime(data) {
         return new Date(data).toLocaleTimeString("en-US", {timeStyle: 'short'});
     },
+
+    getCurrentDate() {
+        return new Date().toDateString();
+    }
 }
