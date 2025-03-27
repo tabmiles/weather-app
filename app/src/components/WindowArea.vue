@@ -125,21 +125,26 @@ export default {
 </script>
 
 <style>
+.windowPane {
+  /* width: 225px; */
+}
 #windowAreaWrapper {
   /* background-color: #ace1f2;
   background-image: url('../assets/Clear_Day.png'); */
 
-  /* background-color: #46345c; */
-  background-image: url('../assets/clear night.png');
+  background-color: #46345c;
+  /* background-image: url('../assets/clear night.png'); */
+
+  background-image: url('../assets/window.png');
 
   grid-area: windowArea;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
   background-repeat:no-repeat;
   background-size: contain;
   background-position: center;
-  width: 450px;
+  width: 525px;
 }
 #topLeft {
   display: flex;

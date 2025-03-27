@@ -18,22 +18,23 @@
     #minMaxTempWrapper {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: end;
         width:  125px;
     }
     .min {
         background-image: url('../assets/min temp.png');
         background-repeat:no-repeat;
         background-size: contain;
-        background-position: center;
+        background-position: bottom;
     }
     .max {
         background-image: url('../assets/max temp.png');
         background-repeat:no-repeat;
         background-size: contain;
-        background-position: center;
+        background-position: bottom;
     }
     #temp {
-        margin-top: 50px;
+        margin-bottom: 25px;
+        color: #4d372b
     }
 </style>
