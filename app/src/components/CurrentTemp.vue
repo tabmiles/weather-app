@@ -1,6 +1,6 @@
 <template>
     <div id="currentTempWrapper">
-      <p>current temperature is {{ this.temp }}</p>
+      <p id="temp"><b>{{ this.temp }}° F</b></p>
     </div>
   </template>
   
@@ -21,12 +21,22 @@
   }
   </script>
   
-  <style scoped>
+<style scoped>
   #currentTempWrapper {
     width: 50%;
     height: 50%;
     text-align: center;
-    background-color: lightsteelblue;
+    background-image: url('../assets/sun catcher.png');
+    background-repeat:no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  </style>
+  #temp {
+    padding:0;
+    margin-top: 45px
+  }
+</style>
   

@@ -3,7 +3,7 @@
       <div>
         <Clock ref="Clock"/>
       </div>
-      <div>
+      <div id="picturesWrapper">
         <PictureFrame ref="Sunrise" type="sunrise"/>
         <PictureFrame ref="Sunset" type="sunset"/>
       </div>
@@ -54,11 +54,18 @@ import Clock from './Clock.vue';
   
   <style scoped>
     #wallDecorations {
-      background-color: lightseagreen;
       grid-area: wallDecorations;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr 1fr;
       display: grid;
+      /* Prevent wall decoration responsiveness */
+      /* min-width: 300px; */
+    }
+    #picturesWrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      height: 170px;
     }
   </style>
   

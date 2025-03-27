@@ -1,16 +1,17 @@
 <template>
   <div id="windowAreaWrapper">
-    <div class="windowPane">
-      <p>Current weather: {{ this.type }}</p>
+    <div class="windowPane" id="topLeft">
       <CurrentTemp ref="CurrentTemp"/>
     </div>
-    <div class="windowPane">
+    <div class="windowPane" id="topRight">
+      <p>Current weather: {{ this.type }}</p>
       <p>Sun or Moon</p>
     </div>
-    <div class="windowPane">
-      <p>Min and Max succulents</p>
+    <div class="windowPane" id="bottomLeft">
+      <MinMaxTemp type="min" :temp="minTemp"/>
+      <MinMaxTemp type="max" :temp="maxTemp"/>
     </div>
-    <div class="windowPane">
+    <div class="windowPane" id="bottomRight">
       <p>Potted plant or mini person model dressed for weather</p>
     </div>
   </div>
@@ -18,17 +19,21 @@
 
 <script>
 import CurrentTemp from './CurrentTemp.vue';
+import MinMaxTemp from './MinMaxTemp.vue';
 
 
 export default {
   name: 'WindowArea',
   components: {
-    CurrentTemp
+    CurrentTemp,
+    MinMaxTemp
   },
   data () {
     return {
       type: null,
-      typeCode: null
+      typeCode: null,
+      minTemp: null,
+      maxTemp: null
     }
   },
   methods: {
@@ -40,6 +45,8 @@ export default {
         return;
       }
       this.typeCode = weather.data.current.weather_code;
+      this.minTemp = weather.data.daily.temperature_2m_min[0];
+      this.maxTemp = weather.data.daily.temperature_2m_max[0];
       switch (weather.data.current.weather_code) {
         // TODO: handle background based on weather type
         case 0:
@@ -117,16 +124,40 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 #windowAreaWrapper {
-  background-color: lightgrey;
+  /* background-color: #ace1f2;
+  background-image: url('../assets/Clear_Day.png'); */
+
+  /* background-color: #46345c; */
+  background-image: url('../assets/clear night.png');
+
   grid-area: windowArea;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  /* padding-bottom: 20px; */
+  background-repeat:no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 450px;
 }
-.windowPane {
-  /* border: 1.5px black solid; */
+#topLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#bottomLeft {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+}
+#topRight {
+  background-repeat:no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+* {
+  margin: 0;
 }
 </style>

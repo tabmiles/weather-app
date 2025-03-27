@@ -49,26 +49,27 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* TODO: font */
   text-align: center;
-  color: #2c3e50;
-  height: 100%;
+  background-color: rgb(255, 229, 233);
 
   display: grid;
-  grid-template-columns: 40% 60%;
+  /* Prevent wall decoration responsiveness */
+  grid-template-columns: 40% auto;
+  /* grid-template-columns: auto; */
   grid-template-rows: 1fr;
   grid-template-areas:
     "wallDecorations windowArea";
-  height: 500px;
-  width: 750px;
+  justify-content: space-around;
+
+  min-width: 750px;
+  height: 600px;
 }
 #updateButton {
   position: absolute;
   background: none;
   border: none;
-  padding: 0;
+  padding: 10px;
   svg {
     fill: lightgray;
   }

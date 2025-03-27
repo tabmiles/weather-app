@@ -1,6 +1,6 @@
 <template>
-    <div id="pictureFrameWrapper">
-      <p>Picture of a {{ this.type }} at {{ this.time }}</p>
+    <div id="pictureFrameWrapper" ref="pictureFrameWrapper" :class=type>
+      <p class="time"><b>{{ this.time }}</b></p>
     </div>
   </template>
   
@@ -26,8 +26,21 @@
   
   <style scoped>
     #pictureFrameWrapper {
-      /* grid-area: PictureFrame; */
-      background-color: lightcoral;
+      background-repeat:no-repeat;
+      background-size: contain;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .sunrise {
+      background-image: url('../assets/sunrise.png');
+    }
+    .sunset {
+      background-image: url('../assets/sunset.png');
+    }
+    .time {
+      margin: 10px 0 20px 0;
     }
   </style>
   
