@@ -1,6 +1,6 @@
 <template>
     <div id="clockWrapper">
-      <p>Clock {{ this.time }}</p>
+      <button id="clockTime">{{ this.time }}</button>
     </div>
   </template>
   
@@ -24,8 +24,19 @@
   <style scoped>
     #clockWrapper {
       /* grid-area: Clock; */
-      background-color: white;
-      height: 100%;
+      background-image: url('../assets/clock.png');
+      background-repeat:no-repeat;
+      background-size: contain;
+      background-position: bottom;
+      height: 80%;
+    }
+    #clockTime {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: x-large;
+      margin-top: 42px;
+      padding: 15px 10px;
     }
   </style>
   

@@ -1,6 +1,5 @@
 <template>
     <div id="calendarWrapper">
-      <p>Calendar</p>
     </div>
   </template>
   
@@ -13,7 +12,10 @@
   <style scoped>
     #calendarWrapper {
       /* grid-area: calendar; */
-      background-color: white;
+      background-image: url('../assets/today_calendar.png');
+      background-repeat:no-repeat;
+      background-size: contain;
+      background-position: bottom;
     }
   </style>
   
